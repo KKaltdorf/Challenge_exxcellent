@@ -4,8 +4,6 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-import javax.swing.JOptionPane;
-
 /**
  * This program is calculating differences of values in csv-tables and outputs the minimal spread.
  * Two kind of datasets can be used: 1) "weather.csv" for calculation of temperature spreads
@@ -28,9 +26,9 @@ public final class App {
     	FileHandler f = new FileHandler();
     	DataHandler d = new DataHandler();
     	f.setDirectory();									//setting directory of file
-    	f.setFileName(JOptionPane.showInputDialog("Please insert the name of your file: "));	//ask user for file name
+    	f.chooseDataset();
     	f.setcsvFileLocation();	    						//sets file location (file path + file name)
-    	
+  	
     	if(f.csvFileName.equals("weather.csv")) {			//if data set weather is used, column 1 and 2 are compared
     		column1 = 1;
     		column2 = 2;
@@ -65,7 +63,7 @@ public final class App {
 	    	if(f.csvFileName.equals("weather.csv")) {				//if data set weather is used, column 1 and 2 are compared
 	    		System.out.printf("Day with smallest temperature spread : %s%n", label + " with a difference of " + mindifference + "°");//dayWithSmallestTempSpread);
 	    	}else if(f.csvFileName.equals("football.csv")){			//if data set football is used, column 5 and 6 are compared
-	    		System.out.printf("Team with smallest goal spread       : %s%n", label + " with a difference of "+ mindifference + " goals");// teamWithSmallesGoalSpread);
+	    		System.out.printf("Team with smallest goal spread       : %s%n", label + " with a difference of "+ mindifference);// teamWithSmallesGoalSpread);
 	    	}
      }
 }

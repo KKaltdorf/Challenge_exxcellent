@@ -1,27 +1,27 @@
 package de.exxcellent.challenge;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import javax.swing.JOptionPane;
 
-import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
 
 /**
- * Example JUnit4 test case.
- * @author Benjamin Schmid <benjamin.schmid@exxcellent.de>
+ * 
+ * @author Kristin Kaltdorf <kristin.kaltdorf@gmx.de>
  */
 public class AppTest {
 
-    private String successLabel = "not successful";
-
-    @Test
-    public void checkDifferenceForNegativeValuesTest() {
-   
+    @Test //to check output of "chooseDataset"
+    public void chooseDataset() {
+    		String[] options = {"weather.csv", "football.csv"};
+            int fileName = JOptionPane.showOptionDialog(null, "Which kind of dataset would you like to analyze?",
+                    "Click a button",
+                    JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, options, options[0]);
+            System.out.println(fileName);
     }
 
     @Test
     public void aPointlessTest() {
-        Assert.assertEquals("Expectations met", "successful", successLabel);
+        //Assert.assertEquals("Expectations met", "successful", successLabel);
     }
 
 }

@@ -1,6 +1,6 @@
 package de.exxcellent.challenge;
 /**
-*includes all methods for handling of numbers from the input data
+*includes all methods for handling the content of the input data
 */
 public class DataHandler {
 	double difference;
@@ -8,11 +8,11 @@ public class DataHandler {
 	double min;
 	String label = "";
 	
-	//sets the label name (e.g. day, team)
+	//sets the label name (day or football team)
 	void setLabel(String l) {
 		label = l;
 	}
-	//returns the label name
+	//returns the label name (day or football team)
 	String getLabel() {
 		return label;
 	}
