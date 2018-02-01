@@ -19,15 +19,15 @@ public class FileHandler {
 	}
 	//user chooses which kind of data set should be analyzed
 	void chooseDataset() {
-        String[] options = {"weather.csv", "football.csv"};
-        chosenFile = JOptionPane.showOptionDialog(null, "Which kind of dataset would you like to analyze?",
-                "Click a button",
-                JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, options, options[0]);
-        if(chosenFile == 0) {			//csvFileName is set depending on user choice
-        	csvFileName = options[0];
-        }else if(chosenFile == 1) {
-        	csvFileName = options[1];
-        }
+        	String[] options = {"weather.csv", "football.csv"};
+        	chosenFile = JOptionPane.showOptionDialog(null, "Which kind of dataset would you like to analyze?",
+              	  "Click a button",
+               	JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, options, options[0]);
+       		if(chosenFile == 0) {			//csvFileName is set depending on user choice
+        		csvFileName = options[0];
+        	}else if(chosenFile == 1) {
+        		csvFileName = options[1];
+        	}
 	}
 	void setcsvFileLocation() {
 		csvFileLocation = directory.concat(csvFileName);
